@@ -2,7 +2,6 @@
 
 import React from "react";
 import Image from "next/image";
-import StoryAvatar from "@/components/StoryAvatar";
 import SkeletonAvatar from "@/components/SkeletonAvatar";
 import ErrorScreen from "@/components/ErrorScreen";
 import { useUsers } from "@/hooks/useUsers";

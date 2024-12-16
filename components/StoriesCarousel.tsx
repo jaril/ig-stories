@@ -1,20 +1,13 @@
 "use client";
 
 import React, { useState, useEffect, useRef, KeyboardEvent } from "react";
-import { useRouter, useParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import StoryCard from "./StoryCard";
 import ErrorScreen from "./ErrorScreen";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { User, Story } from "@/lib/sample-data";
-
-// interface Story {
-//   id: string
-//   imageUrl: string
-//   timestamp: number
-// }
 
 interface Story {
   id: string;
@@ -22,14 +15,6 @@ interface Story {
   timestamp: number;
   viewed: boolean;
 }
-
-// interface User {
-//   id: string
-//   username: string
-//   avatarUrl: string
-//   viewed: boolean
-//   stories: Story[]
-// }
 
 interface User {
   id: string;
@@ -52,7 +37,6 @@ export default function StoriesCarousel({
   initialStoryId,
 }: StoriesCarouselProps) {
   const router = useRouter();
-  const params = useParams();
   const [activeUserIndex, setActiveUserIndex] = useState(0);
   const [activeStoryIndex, setActiveStoryIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
