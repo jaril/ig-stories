@@ -35,6 +35,8 @@ export default async function StoryPage({
         users={sampleUsers}
         initialUsername={username}
         initialStoryId={targetStoryId}
+        initialUserIndex={sampleUsers.findIndex((u) => u.username === username)}
+        initialStoryIndex={0}
       />
     </main>
   );

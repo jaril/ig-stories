@@ -12,13 +12,11 @@ export default async function StoryPage({
   // Check if the username exists
   const user = sampleUsers.find((u) => u.username === username);
   if (!user) {
-    console.log("test");
     return <ErrorScreen error={{ name: "", message: "Invalid username" }} />;
   }
 
   // Check if the storyId exists for the user
   const storyExists = user.stories.some((s) => s.id === storyId);
-  console.log({ stories: user.stories, storyId });
   if (!storyExists) {
     return <ErrorScreen error={{ name: "", message: "Invalid story ID" }} />;
   }
@@ -28,6 +26,8 @@ export default async function StoryPage({
       <StoriesCarousel
         users={sampleUsers}
         initialUsername={username}
+        initialUserIndex={sampleUsers.findIndex((u) => u.username === username)}
+        initialStoryIndex={user.stories.findIndex((s) => s.id === storyId)}
         initialStoryId={storyId}
       />
     </main>

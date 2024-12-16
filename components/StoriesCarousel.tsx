@@ -29,16 +29,20 @@ interface StoriesCarouselProps {
   users: User[];
   initialUsername: string;
   initialStoryId: string;
+  initialUserIndex: number;
+  initialStoryIndex: number;
 }
 
 export default function StoriesCarousel({
   users,
   initialUsername,
   initialStoryId,
+  initialUserIndex,
+  initialStoryIndex,
 }: StoriesCarouselProps) {
   const router = useRouter();
-  const [activeUserIndex, setActiveUserIndex] = useState(0);
-  const [activeStoryIndex, setActiveStoryIndex] = useState(0);
+  const [activeUserIndex, setActiveUserIndex] = useState(initialUserIndex);
+  const [activeStoryIndex, setActiveStoryIndex] = useState(initialStoryIndex);
   const [isPlaying, setIsPlaying] = useState(true);
   const [progress, setProgress] = useState(0);
   const [error, setError] = useState(false);
