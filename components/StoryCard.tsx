@@ -12,7 +12,6 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import ProgressBar from "./ProgressBar";
-import { User, Story } from "@/lib/sample-data";
 
 interface Story {
   id: string;
@@ -83,7 +82,7 @@ export default function StoryCard({
             />
           </div>
 
-          <div className="absolute top-0 left-0 right-0 p-4 flex justify-between items-center bg-gradient-to-b from-black/50 to-transparent">
+          <div className="absolute top-0 left-0 right-0 p-4 flex justify-between items-center bg-gradient-to-b from-black/60 to-transparent">
             <div className="flex items-center space-x-2">
               <Image
                 src={user.avatarUrl}
@@ -134,7 +133,7 @@ export default function StoryCard({
             </div>
           </div>
 
-          <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/50 to-transparent">
+          <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
             <form onSubmit={handleReply} className="flex space-x-2">
               <Input
                 type="text"

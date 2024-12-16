@@ -2,12 +2,12 @@ import StoriesCarousel from "@/components/StoriesCarousel";
 import ErrorScreen from "@/components/ErrorScreen";
 import { sampleUsers } from "@/lib/sample-data";
 
-export default function StoryPage({
+export default async function StoryPage({
   params,
 }: {
-  params: { username: string; storyId: string };
+  params: Promise<{ username: string; storyId: string }>;
 }) {
-  const { username, storyId } = params;
+  const { username, storyId } = await params;
 
   // Check if the username exists
   const user = sampleUsers.find((u) => u.username === username);
